@@ -1,7 +1,7 @@
 # Image Repository
 This project consists of the backend of an image repository web app
 
-Technologies: Node.js, Express.js, MongoDB, Tensorflow (mobilenet)
+Technologies: Node.js, Express.js, MongoDB (mongoose), JWT, bcrypt, Tensorflow (mobilenet)
 
 ## Setup
 1. Clone the repo and run `npm install`
