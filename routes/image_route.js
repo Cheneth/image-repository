@@ -87,7 +87,7 @@ router.post("/image/upload", authentication.authenticate, upload.single("image")
 // Search images based on space separated keywords
 // Params: searchTerms (as comma separated strings), isAnd (bool)
 // Return: Array of images
-router.get("/image/search", authentication.authenticate, (req, res) => { // TODO
+router.get("/image/search", (req, res) => { // TODO
     if (req.body.isAnd == null) {
         return res.status(400).send("Error, please include a boolean value for the parameter 'isAnd' to specify whether the search method should be OR or AND.")
     }
@@ -145,12 +145,12 @@ router.get("/image/myimages", authentication.authenticate, (req, res) => {
 // View an image
 // Params: imageId
 // Return: Image file
-router.get("/image/view", authentication.authenticate, (req, res) => {
-    if (!req.body.imageId) {
+router.get("/image/view/:imageId", (req, res) => {
+    if (!req.params.imageId) {
         return res.status(400).send("Error getting image, please include imageId in the body of your request");
     }
 
-    Image.findOne({_id: req.body.imageId}).then((image) => {
+    Image.findOne({_id: req.params.imageId}).then((image) => {
         console.log(image);
         res.type(image.content_type);
         return res.status(200).send(image.img);
