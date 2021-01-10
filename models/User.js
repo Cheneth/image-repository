@@ -12,10 +12,6 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    token: {
-        type: String
-
     }
 })
 
@@ -46,14 +42,11 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
     });
 };
 
-UserSchema.methods.generateAndUpdateAccessToken = async function (username) {
-    var user = this;
+UserSchema.methods.generateAccessToken = async function (username) {
     const token = jwt.sign({
         id: username
     }, process.env.TOKEN_SECRET, {expiresIn: "1 day"});
     console.log("new token: " + token)
-    user.token = token;
-    await user.save()
     return token;
 }
 

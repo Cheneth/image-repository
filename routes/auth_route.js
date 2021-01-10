@@ -40,7 +40,7 @@ router.post("/register", (req, res) => {
           console.log("27 Valid:", isMatch);
           if (!isMatch)
             return res.status(403).send("Error logging in, incorrect password");
-          const token = await user.generateAndUpdateAccessToken(
+          const token = await user.generateAccessToken(
             req.body.username
           );
           return res.json({
