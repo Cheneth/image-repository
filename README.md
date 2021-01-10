@@ -17,9 +17,9 @@ MONGO_URL=mongodb+srv://ethan:ethan@shopify-challenge-clust.hc8zo.mongodb.net/<d
 | Feature | Description 
 | :------ | : --------
 | User Authentication | User registration and login
-| Password Hashing | Passwords are hashed before stored for user security
+| Password Hashing | Passwords are hashed using bcrypt before stored for user security
 | Authenticated endpoints | Certain resources require an access token to use
-| Search function | Search for an image based on tags
+| Search function | Search for images based on tags in an AND or an OR fashion
 | Upload Images | Repository supports jpeg/jpg/png
 | Authenticated Deletion | Only the owner of an image can delete it
 | Machine Learning Generated Tags | When an image is uploaded
