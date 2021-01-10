@@ -217,7 +217,7 @@ router.post("/image/unlike", authentication.authenticate, (req, res) => {
 // Delete an image
 // Params: imageId
 // Return: None
-router.get("/image/delete", authentication.authenticate, (req, res) => {
+router.delete("/image/delete", authentication.authenticate, (req, res) => {
     if (!req.body.imageId) {
         return res.status(400).send("Error deleting image, please include imageId in the body of your request");
     }
