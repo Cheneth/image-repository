@@ -21,6 +21,7 @@ MONGO_URL=mongodb+srv://ethan:ethan@shopify-challenge-clust.hc8zo.mongodb.net/<d
 | Authenticated endpoints | Certain resources require an access token to use
 | Search function | Search for images based on tags in an AND or an OR fashion
 | Upload Images | Repository supports jpeg/jpg/png
+| Like Images | Users can like images
 | Authenticated Deletion | Only the owner of an image can delete it
 | Machine Learning Generated Tags | When an image is uploaded
 
@@ -59,6 +60,13 @@ Otherwise, if I do an "AND" search, I will only get the image of the shiba becau
 | /image/like      | yes           | imageId | None | Like an image
 | /image/unlike | yes           | imageId | None | Unlike an image
 | /image/delete | yes           | imageId | None | Delete an image
+
+## Expansion
+
+Ideas for expansion of this project:
+
+* Create a "hot" page which returns the images with the largest increase in likes from the past 24 hrs
+* Support pagination for all endpoints that return an array of images
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
