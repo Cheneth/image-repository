@@ -26,7 +26,7 @@ MONGO_URL=mongodb+srv://ethan:ethan@shopify-challenge-clust.hc8zo.mongodb.net/<d
 | Machine Learning Generated Tags | When an image is uploaded
 
 ### Demo of generated tags
-In the gif below, I upload a picture of a cute corgi to the repository and manually give it the tags "dog" and "cute", but after the upload the image actually has the tags [ "dog", "cute", "pembroke", "pembroke welsh corgi" ]. The tags "cute" and "pembroke" were generated using the mobilenet model and since their probability of accuracy was above 0.75, they were added as tags to the image. Admittedly, this model doesn't work very well and classifications of above 0.75 are hard to come by. Nonetheless, this feature was a fun and interesting proof of concept.
+In the gif below, I upload a picture of a cute corgi to the repository and manually give it the tags "dog" and "cute", but after the upload the image actually has the tags [ "dog", "cute", "pembroke", "pembroke welsh corgi" ]. The tags "cute" and "pembroke" were generated using the mobilenet model and since their prediction probability was above the threshold of 0.75, they were added as tags to the image. Admittedly, this model doesn't work very well and probabilities above 0.75 are hard to come by. Nonetheless, this feature was a fun and interesting proof of concept.
 
 ![Demo pic](https://media.giphy.com/media/6q3ukP7tUeRDff3rVX/giphy.gif)
 
