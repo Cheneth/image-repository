@@ -15,7 +15,7 @@ MONGO_URL=mongodb+srv://ethan:ethan@shopify-challenge-clust.hc8zo.mongodb.net/<d
 
 ## Features
 | Feature | Description 
-| :------ | : --------
+| :------ | :--------
 | User Authentication | User registration and login
 | Password Hashing | Passwords are hashed using bcrypt before stored for user security
 | Authenticated endpoints | Certain resources require an access token to use
