@@ -24,6 +24,9 @@ MONGO_URL=mongodb+srv://ethan:ethan@shopify-challenge-clust.hc8zo.mongodb.net/<d
 | Authenticated Deletion | Only the owner of an image can delete it
 | Machine Learning Generated Tags | When an image is uploaded
 
+### Example of Generated Tags
+![Alt text](https://imgur.com/iJ9ajPi.gif)
+
 ## Endpoints
 
 | Endpoint      | Authenticated | Parameters | Return | Purpose
