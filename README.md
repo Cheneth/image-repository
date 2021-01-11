@@ -29,6 +29,23 @@ In the gif below, I upload a picture of a cute corgi to the repository and manua
 
 ![Demo pic](https://media.giphy.com/media/6q3ukP7tUeRDff3rVX/giphy.gif)
 
+## Demo of viewing an image
+
+Using the imageId returned from uploading the image:
+
+![Demo pic](https://media.giphy.com/media/VoIyMNQirsjRu7XqfM/giphy.gif)
+
+### Example of search
+
+Following the previous demo, let's say I uploaded another picture of a dog with the tags "dog" and "shiba". If I do an "OR" search with the terms "dog" and "shiba", I will find both images since we are looking for images that have ANY of the search terms provided.
+
+![Demo pic](https://i.imgur.com/SwnDGUm.png)
+
+Otherwise, if I do an "AND" search, I will only get the image of the shiba because we are looking for all images that incude ALL search terms.
+
+![Demo pic](https://i.imgur.com/VYSoAAX.png)
+
+
 ## Endpoints
 
 | Endpoint      | Authenticated | Parameters | Return | Purpose
