@@ -46,6 +46,8 @@ Otherwise, if I do an "AND" search, I will only get the image of the shiba becau
 
 ![Demo pic](https://i.imgur.com/VYSoAAX.png)
 
+Finally, an empty search will return all images in the repository.
+
 
 ## Endpoints
 
