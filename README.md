@@ -1,5 +1,5 @@
 # Image Repository
-This project consists of the backend of an image repository web app
+This project consists of the backend of an image repository web app for Shopify Summer 2021
 
 Technologies: Node.js, Express.js, MongoDB, Tensorflow (mobilenet)
 
