@@ -88,38 +88,49 @@ router.post("/image/upload", authentication.authenticate, upload.single("image")
 // Params: searchTerms (as comma separated strings), isAnd (bool)
 // Return: Array of images
 router.get("/image/search", (req, res) => { // TODO
-    if (req.body.isAnd == null) {
-        return res.status(400).send("Error, please include a boolean value for the parameter 'isAnd' to specify whether the search method should be OR or AND.")
-    }
-    let searchTerms = []
-    if (req.body.searchTerms) {
-        searchTerms = req.body.searchTerms.toLowerCase().split(",");
-        searchTerms = searchTerms.map((term) => term.trim())
-    }
-    if (req.body.isAnd == true) {
-        Image.find({
-            tags: {
-                $all: searchTerms
-            }
-        }).select('-img').then((images) => {
+    if (req.body.searchTerms === "") {
+        console.log("inside")
+        Image.find({}).select('-img').then((images) => {
             console.log(images)
             return res.status(200).send(images)
         }).catch((err) => {
             console.log(err)
             return res.sendStatus(500)
         })
-    } else if (req.body.isAnd == false) {
-        Image.find({
-            tags: {
-                $in: searchTerms
-            }
-        }).select('-img').then((images) => {
-            console.log(images)
-            return res.status(200).send(images)
-        }).catch((err) => {
-            console.log(err)
-            return res.sendStatus(500)
-        })
+    } else {
+        if (req.body.isAnd == null) {
+            return res.status(400).send("Error, please include a boolean value for the parameter 'isAnd' to specify whether the search method should be OR or AND.")
+        }
+        let searchTerms = []
+        if (req.body.searchTerms) {
+            searchTerms = req.body.searchTerms.toLowerCase().split(",");
+            searchTerms = searchTerms.map((term) => term.trim())
+        }
+        if (req.body.isAnd == true) {
+            Image.find({
+                tags: {
+                    $all: searchTerms
+                }
+            }).select('-img').then((images) => {
+                console.log(images)
+                return res.status(200).send(images)
+            }).catch((err) => {
+                console.log(err)
+                return res.sendStatus(500)
+            })
+        } else if (req.body.isAnd == false) {
+            Image.find({
+                tags: {
+                    $in: searchTerms
+                }
+            }).select('-img').then((images) => {
+                console.log(images)
+                return res.status(200).send(images)
+            }).catch((err) => {
+                console.log(err)
+                return res.sendStatus(500)
+            })
+        }
     }
 });
 
